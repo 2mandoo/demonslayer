@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Demon Slayer</title>
+    <style>
+        .hContainer {
+            display: flex; /* Flexbox 레이아웃 적용 */
+            align-items: center; /* 수직 중앙 정렬 */
+            justify-content: center; /* 수평 중앙 정렬 (선택 사항) */
+            gap: 10px; /* 아이콘과 제목 간의 간격 조정 */
+            padding-bottom: 60px;
+        }
+
+        .hContainer h1 {
+            margin: 0; /* 제목의 기본 마진 제거 */
+        }
+
+        h1 {
+            color:#ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* 지도 */
+        .map-container {
+            display: flex;
+            align-items: center; /* 세로축 가운데 정렬 */
+            padding: 10px; /* 여백 추가 */
+            height: 200px; 
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .map-container .map-class {
+            width: 60%;
+            height: 99%;
+        }
+        .map-container .map-desc {
+            margin-left: 10px;
+            width: 40%;
+            height: 99%;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=96244ebba269bcf1200c955d20af5861&libraries=services"></script>
+</head>
+
+<body>
+    <header>
+        <div><i class="snes-jp-logo"></i></div>
+        <div class="logo">Demon Slayer</div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="board.html">Board</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nes-field is-inline search-bar">
+            <input type="text" id="name_field" class="nes-input" placeholder="검색할 캐릭터를 입력하세요" style="zoom: 0.8">
+            <span class="text-color-black">
+                <a class="nes-btn" style="zoom: 0.7">검색</a>
+            </span>
+        </div>
+    </header>
+    
+    <main>
+        <div class="hContainer">
+            <i class="nes-icon is-large star" style="zoom: 0.7;"></i>
+            <h1>굿즈는 필수</h1>
+            <i class="nes-icon is-large star" style="zoom: 0.7;"></i>
+        </div>
+        <div id="map-content"></div>
+    </main>
+
+    <button type="button" class="nes-btn is-error scroll-btn"><span><</span></button>
+
+    <footer id="contact">
+        <p><i class="nes-icon is-small heart"></i>Contact Info<i class="nes-icon is-small heart"></i></p>
+        <a href="https://github.com/2mandoo"><i class="nes-icon github is-small"></i></a>
+        <p><i class="nes-icon google is-small"></i> dlwjdgus7441@gmail.com | <i class="nes-phone" style="zoom: 0.15;"></i> 010 9255 7441</p>
+    </footer>
+
+    <script>
+        // 위로 버튼
+        const scrollButton = document.querySelector(".scroll-btn");
+
+        scrollButton.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+    <script src="./js/kakaomap.js"></script>
+</body>
+
+</html>
